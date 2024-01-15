@@ -42,30 +42,39 @@ let number2 = 2;
 let number3 = 3;
 
 let numbers = [1, 2, 3];
+// for (let i = 0; i < numbers.length; i++) {
+//   context("Demo Test for Online-Restaurant", () => {
+//     before(() => { 
+//       cy.visit('https://restoran.onlineresheniya.ru/') //Ссылка на сайт
+//     });
+//     // choose client version
+//     it("Choose client version: " + numbers[i], () => { 
+//         cy.contains('Работа сервиса со стороны клиента').click()
+//         cy.wait(1000)
+//         cy.contains('Посмотреть сервис').click()
+//         cy.wait(1000)
+//         cy.get('[id="fld_5895935_1_opt1579921"]').click()
+//         cy.wait(1000)
+//         cy.get('[value="Первые блюда"]').click()
+//         .get('[value="Борщ"]').click()
+//         .get('[id="fld_8401512_1"]').select(numbers[i])
+//         cy.get('[placeholder="Номер столика"]').type(numbers[i])
+//         .should('have.value', numbers[i])
+//         cy.contains('Подтвердить').click()
+//         cy.wait(1000)
+//     });
+//   });
+// }
+
 for (let i = 0; i < numbers.length; i++) {
-  context("Demo Test for Online-Restaurant", () => {
+  context("Demo Test for mail send from Gmail", () => {
     before(() => { 
-      cy.visit('https://restoran.onlineresheniya.ru/') //Ссылка на сайт
+      cy.visit('https://www.deepl.com/translator') //Ссылка на сайт
     });
-    // choose client version
-    it("Choose client version: " + numbers[i], () => { 
-        cy.contains('Работа сервиса со стороны клиента').click()
-        cy.wait(1000)
-        cy.contains('Посмотреть сервис').click()
-        cy.wait(1000)
-        cy.get('[id="fld_5895935_1_opt1579921"]').click()
-        cy.wait(1000)
-        cy.get('[value="Первые блюда"]').click()
-        .get('[value="Борщ"]').click()
-        .get('[id="fld_8401512_1"]').select(numbers[i])
-        cy.get('[placeholder="Номер столика"]').type(numbers[i])
-        .should('have.value', numbers[i])
-        cy.contains('Подтвердить').click()
-        cy.wait(1000)
+    it('Input tests in Deepl Translator' + numbers[i], () => {
+    cy.get('[_d-id="1"]').type('Привет')
     });
   });
 }
-
-
 
 // Path: cypress/e2e/DemoTest/Visit.cy.js
