@@ -43,7 +43,7 @@ let number3 = 3;
 
 let numbers = [1, 2, 3];
 for (let i = 0; i < numbers.length; i++) {
-  context("Demo Test 2", () => {
+  context("Demo Test for Online-Restaurant", () => {
     before(() => { 
       cy.visit('https://restoran.onlineresheniya.ru/') //Ссылка на сайт
     });
@@ -62,7 +62,6 @@ for (let i = 0; i < numbers.length; i++) {
         .should('have.value', numbers[i])
         cy.contains('Подтвердить').click()
         cy.wait(1000)
-
     });
   });
 }
