@@ -37,26 +37,35 @@
 //   });
 // });
 
-context("Demo Test 2", () => {
-  before(() => { 
-    cy.visit('https://restoran.onlineresheniya.ru/') //Ссылка на сайт
+let number1 = 1;
+let number2 = 2;
+let number3 = 3;
+
+let numbers = [1, 2, 3];
+for (let i = 0; i < numbers.length; i++) {
+  context("Demo Test 2", () => {
+    before(() => { 
+      cy.visit('https://restoran.onlineresheniya.ru/') //Ссылка на сайт
+    });
+    // choose client version
+    it("Choose client version: " + numbers[i], () => { 
+        cy.contains('Работа сервиса со стороны клиента').click()
+        cy.wait(1000)
+        cy.contains('Посмотреть сервис').click()
+        cy.wait(1000)
+        cy.get('[id="fld_5895935_1_opt1579921"]').click()
+        cy.wait(1000)
+        cy.get('[value="Первые блюда"]').click()
+        .get('[value="Борщ"]').click()
+        .get('[id="fld_8401512_1"]').select(numbers[i])
+        cy.get('[placeholder="Номер столика"]').type(numbers[i])
+        .should('have.value', numbers[i])
+        cy.contains('Подтвердить').click()
+        cy.wait(1000)
+
+    });
   });
-  // choose client version
-  it("Choose client version", () => { 
-      cy.contains('Работа сервиса со стороны клиента').click()
-      cy.wait(1500)
-      cy.contains('Посмотреть сервис').click()
-      cy.wait(1500)
-      cy.get('[id="fld_5895935_1_opt1579921"]').click()
-      cy.wait(1500)
-      cy.get('[value="Первые блюда"]').click()
-      .get('[value="Борщ"]').click()
-      .get('[id="fld_8401512_1"]').select('2')
-      cy.get('[placeholder="Номер столика"]').type('1')
-      .should('have.value', '1')
-      cy.contains('Подтвердить').click()
-  });
-});
+}
 
 
 
