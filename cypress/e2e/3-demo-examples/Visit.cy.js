@@ -42,29 +42,29 @@ let number2 = 2;
 let number3 = 3;
 
 let numbers = [1, 2, 3];
-// for (let i = 0; i < numbers.length; i++) {
-//   context("Demo Test for Online-Restaurant", () => {
-//     before(() => { 
-//       cy.visit('https://restoran.onlineresheniya.ru/') //Ссылка на сайт
-//     });
-//     // choose client version
-//     it("Choose client version: " + numbers[i], () => { 
-//         cy.contains('Работа сервиса со стороны клиента').click()
-//         cy.wait(1000)
-//         cy.contains('Посмотреть сервис').click()
-//         cy.wait(1000)
-//         cy.get('[id="fld_5895935_1_opt1579921"]').click()
-//         cy.wait(1000)
-//         cy.get('[value="Первые блюда"]').click()
-//         .get('[value="Борщ"]').click()
-//         .get('[id="fld_8401512_1"]').select(numbers[i])
-//         cy.get('[placeholder="Номер столика"]').type(numbers[i])
-//         .should('have.value', numbers[i])
-//         cy.contains('Подтвердить').click()
-//         cy.wait(1000)
-//     });
-//   });
-// }
+for (let i = 0; i < numbers.length; i++) {
+  context("Demo Test for Online-Restaurant", () => {
+    before(() => { 
+      cy.visit('https://restoran.onlineresheniya.ru/') //Ссылка на сайт
+    });
+    // choose client version
+    it("Choose client version: " + numbers[i], () => { 
+        cy.contains('Работа сервиса со стороны клиента').click()
+        cy.wait(1000)
+        cy.contains('Посмотреть сервис').click()
+        cy.wait(1000)
+        cy.get('[id="fld_5895935_1_opt1579921"]').click()
+        cy.wait(1000)
+        cy.get('[value="Первые блюда"]').click()
+        .get('[value="Борщ"]').click()
+        .get('[id="fld_8401512_1"]').select(numbers[i])
+        cy.get('[placeholder="Номер столика"]').type(numbers[i])
+        .should('have.value', numbers[i])
+        cy.contains('Подтвердить').click()
+        cy.wait(1000)
+    });
+  });
+}
 
 for (let i = 0; i < numbers.length; i++) {
   context("Demo Test for mail send from Gmail", () => {
@@ -76,5 +76,22 @@ for (let i = 0; i < numbers.length; i++) {
     });
   });
 }
+
+// visit - переход на страницу
+// get - получение элемента  
+// type - ввод текста
+// should - проверка значения
+// click - клик по элементу
+// contains - поиск элемента по тексту
+// select - выбор элемента из списка
+// last - выбор последнего элемента
+// parents - поиск родительских элементов
+// first - выбор первого элемента
+// check - установка флага
+// wait - ожидание
+// force - принудительный клик
+
+//5cd80e75ad58f6f0e7363272d6515735687757e8
+
 
 // Path: cypress/e2e/DemoTest/Visit.cy.js
